@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_12sdp">
+
+    <!-- PODIUM BLOCK - FIRST PLACE -->
+    <View
+        android:id="@+id/podium_first"
+        android:layout_width="120dp"
+        android:layout_height="200dp"
+        android:background="@drawable/podium_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- PODIUM BLOCK - SECOND PLACE -->
+    <View
+        android:id="@+id/podium_second"
+        android:layout_width="110dp"
+        android:layout_height="160dp"
+        android:background="@drawable/podium_background"
+        android:layout_marginEnd="-16dp"
+        app:layout_constraintBottom_toBottomOf="@id/podium_first"
+        app:layout_constraintEnd_toStartOf="@id/podium_first" />
+
+    <!-- PODIUM BLOCK - THIRD PLACE -->
+    <View
+        android:id="@+id/podium_third"
+        android:layout_width="110dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="-16dp"
+        android:background="@drawable/podium_background"
+        app:layout_constraintBottom_toBottomOf="@id/podium_first"
+        app:layout_constraintStart_toEndOf="@id/podium_first" />
+
+    <!-- RANK NUMBERS -->
+    <TextView
+        android:id="@+id/text_rank_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textColor="@android:color/white"
+        android:textSize="90sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/podium_first"
+        app:layout_constraintEnd_toEndOf="@id/podium_first"
+        app:layout_constraintStart_toStartOf="@id/podium_first"
+        app:layout_constraintTop_toTopOf="@id/podium_first" />
+
+    <TextView
+        android:id="@+id/text_rank_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:textColor="@android:color/white"
+        android:textSize="80sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/podium_second"
+        app:layout_constraintEnd_toEndOf="@id/podium_second"
+        app:layout_constraintStart_toStartOf="@id/podium_second"
+        app:layout_constraintTop_toTopOf="@id/podium_second" />
+
+    <TextView
+        android:id="@+id/text_rank_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textColor="@android:color/white"
+        android:textSize="70sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/podium_third"
+        app:layout_constraintEnd_toEndOf="@id/podium_third"
+        app:layout_constraintStart_toStartOf="@id/podium_third"
+        app:layout_constraintTop_toTopOf="@id/podium_third" />
+
+
+    <!-- USER PROFILE - FIRST PLACE (Gowtham) -->
+    <LinearLayout
+        android:id="@+id/layout_first_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/podium_first"
+        app:layout_constraintEnd_toEndOf="@id/podium_first"
+        app:layout_constraintStart_toStartOf="@id/podium_first">
+
+        <!-- Using a ConstraintLayout here to overlay the star on the image -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_first_profile"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_launcher_background"
+                app:civ_border_color="#E0E0E0"
+                app:civ_border_width="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+
+            <!-- The star icon with its background -->
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/star_background"
+                android:padding="6dp"
+                android:src="@drawable/ic_star_white"
+                app:layout_constraintCircle="@id/img_first_profile"
+                app:layout_constraintCircleAngle="315"
+                app:layout_constraintCircleRadius="40dp"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/txt_first_name"
+            style="@style/textview_inter_semi"
+            android:text="Gowtham"
+            android:textColor="@color/text_color_unselect"
+            android:textSize="@dimen/_12sdp" />
+
+        <TextView
+            android:id="@+id/txt_first_score"
+            style="@style/textview_inter_semi"
+            android:text="1,469 Score"
+            android:textColor="@color/score_color_podium"
+            android:textSize="@dimen/_12sdp" />
+    </LinearLayout>
+
+
+    <!-- USER PROFILE - SECOND PLACE (Sai Kumar) -->
+    <LinearLayout
+        android:id="@+id/layout_second_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/podium_second"
+        app:layout_constraintEnd_toEndOf="@id/podium_second"
+        app:layout_constraintStart_toStartOf="@id/podium_second">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_second_profile"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_launcher_background"
+            app:civ_border_color="#E0E0E0"
+            app:civ_border_width="2dp"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+
+            android:id="@+id/txt_second_name"
+            style="@style/textview_inter_semi"
+            android:textColor="@color/text_color_unselect"
+            android:textSize="@dimen/_12sdp"
+            android:text="Sai Kumar" />
+
+        <TextView
+            android:id="@+id/txt_second_score"
+            style="@style/textview_inter_semi"
+            android:text="11,469 Score"
+            android:textColor="@color/score_color_podium"
+            android:textSize="@dimen/_10sdp" />
+    </LinearLayout>
+
+    <!-- USER PROFILE - THIRD PLACE (Sony) -->
+    <LinearLayout
+        android:id="@+id/layout_third_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/podium_third"
+        app:layout_constraintEnd_toEndOf="@id/podium_third"
+        app:layout_constraintStart_toStartOf="@id/podium_third">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_third_profile"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_launcher_background"
+            app:civ_border_color="#E0E0E0"
+            app:civ_border_width="2dp"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/txt_third_name"
+            style="@style/textview_inter_semi"
+            android:textColor="@color/text_color_unselect"
+            android:textSize="@dimen/_12sdp"
+            android:text="Sony" />
+
+        <TextView
+            android:id="@+id/txt_third_score"
+            style="@style/textview_inter_semi"
+            android:text="469 Score"
+            android:textColor="@color/score_color_podium"
+            android:textSize="@dimen/_10sdp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

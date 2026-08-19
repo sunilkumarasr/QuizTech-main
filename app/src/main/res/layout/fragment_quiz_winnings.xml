@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".enroll.EnrollPrizeFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp"
+        android:background="@drawable/winning_bg_header"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            android:id="@+id/tvRankLabel"
+            style="@style/textview_inter"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:textStyle="bold"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/quiztech_teal"
+            android:text="Rank"
+            />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:id="@+id/tvPrizeLabel"
+            android:text="Prizes"
+            style="@style/textview_inter"
+            android:textStyle="bold"
+            android:textSize="@dimen/_14sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:textColor="@color/quiztech_teal"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRankPrizes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+
+        tools:listitem="@layout/item_rank_prize" />
+
+</LinearLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/img_bg_full"
+    tools:context=".quiz.MyQuizFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/textview_inter_semi"
+        android:text="My Quiz"
+        android:layout_margin="@dimen/_16sdp"
+        android:textColor="@color/text_color_unselect"
+        android:textSize="@dimen/_18sdp"
+        android:textStyle="bold" />
+
+
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <RadioButton
+            android:id="@+id/btnNewQuiz"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/_35sdp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:fontFamily="@font/poppins"
+            android:background="@drawable/bg_selector"
+            android:text="New Quiz"
+            android:button="@null"
+            android:checked="true"
+            android:textColor="@drawable/color_selector" />
+
+        <RadioButton
+            android:id="@+id/btnCompletedQuiz"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/_35sdp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="@string/completed_quiz"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:fontFamily="@font/poppins"
+            android:button="@null"
+            android:background="@drawable/bg_selector"
+            android:textColor="@drawable/color_selector"
+            />
+    </RadioGroup>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvQuiz"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_16sdp"
+            tools:listitem="@layout/item_mock_test" />
+
+        <TextView
+            android:id="@+id/tvNoData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="No Data Available"
+            android:visibility="gone"
+            android:fontFamily="@font/poppins"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/text_color_unselect" />
+
+    </FrameLayout>
+
+</LinearLayout>

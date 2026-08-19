@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_bg_full"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".quiz.QuizInfoActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/lnr_bottom"
+        android:orientation="vertical"
+        >
+
+        <include android:id="@+id/layoutHeader"
+            layout="@layout/header_toolbar"
+            />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_subjects"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            style="@style/textview_inter"
+                            android:text="Subjects:"
+                            android:textColor="@color/text_color_unselect"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txt_sub"
+                            style="@style/textview_inter"
+                            android:layout_marginTop="4dp"
+                            android:text="Aptitude, Reasoning, English"
+                            android:textColor="@color/quiztech_teal"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_16sdp"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardElevation="4dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/txt_title"
+                                style="@style/textview_poppins"
+                                android:text="SBI Clear Prelims 2024-25"
+                                android:textSize="@dimen/_14sdp"
+                                android:textColor="@color/quiztech_teal"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txt_short"
+                                style="@style/textview_inter_sub_heading"
+                                android:layout_marginTop="8dp"
+                                android:textSize="@dimen/_10sdp"
+                                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry" />
+
+                            <TextView
+                                android:id="@+id/textTestType"
+                                style="@style/textview_inter"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:textSize="@dimen/_12sdp"
+                                android:textStyle="bold"
+                                android:visibility="gone"
+                                android:textColor="@color/enroll_btn_color"
+                                tools:text="Test Type: Free Test" />
+
+                            <TextView
+                                android:id="@+id/textQuestionsCount"
+                                style="@style/textview_inter"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:textSize="@dimen/_12sdp"
+                                tools:text="Questions Count: 100" />
+
+                            <TextView
+                                android:id="@+id/textMaxMarks"
+                                style="@style/textview_inter"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:textSize="@dimen/_12sdp"
+                                tools:text="Max Marks: 100" />
+
+                            <TextView
+                                android:id="@+id/textTime"
+                                style="@style/textview_inter"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:textSize="@dimen/_12sdp"
+                                tools:text="Time: 60 minutes" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="16dp"
+                                android:background="@android:color/darker_gray" />
+
+                            <TextView
+                                style="@style/textview_inter"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:text="Date and Time:" />
+
+                            <TextView
+                                android:id="@+id/txt_date_time"
+                                style="@style/textview_inter"
+                                android:layout_marginTop="4dp"
+                                android:text="20-02-2025, 09:25 AM"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvTag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top|end"
+                            android:background="@drawable/bg_tag_free"
+                            android:paddingHorizontal="@dimen/_12sdp"
+                            android:paddingVertical="@dimen/_4sdp"
+                            android:text="Free"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_participation_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="16dp"
+                        android:weightSum="3">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/textview_inter"
+                                android:text="Max Members"
+                                android:textSize="@dimen/_10sdp"
+                                android:textColor="@color/text_color_unselect" />
+
+                            <TextView
+                                android:id="@+id/textMaxMembers"
+                                style="@style/textview_inter"
+                                android:layout_marginTop="4dp"
+                                android:text="0"
+                                android:textColor="@color/quiztech_teal"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/textview_inter"
+                                android:text="Left Count"
+                                android:textSize="@dimen/_10sdp"
+                                android:textColor="@color/text_color_unselect" />
+
+                            <TextView
+                                android:id="@+id/textLeftCount"
+                                style="@style/textview_inter"
+                                android:layout_marginTop="4dp"
+                                android:text="0"
+                                android:textColor="@color/quiztech_teal"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/textview_inter"
+                                android:text="Rewards"
+                                android:textSize="@dimen/_10sdp"
+                                android:textColor="@color/text_color_unselect" />
+
+                            <TextView
+                                android:id="@+id/textRewards"
+                                style="@style/textview_inter"
+                                android:layout_marginTop="4dp"
+                                android:text="0"
+                                android:textColor="@color/quiztech_teal"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_timer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_margin="@dimen/_16sdp"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardElevation="6dp"
+                    app:cardBackgroundColor="#FDF4E7">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_16sdp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Test starts in"
+                            style="@style/textview_inter"
+                            android:textColor="@color/text_color_unselect"
+                            android:textSize="@dimen/_12sdp"
+                            android:layout_marginBottom="@dimen/_8sdp"/>
+
+                        <TextView
+                            android:id="@+id/txt_start_timer"
+                            style="@style/textview_inter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="00:00:00"
+                            android:gravity="center"
+                            android:textColor="@color/enroll_btn_color"
+                            android:textSize="@dimen/_24sdp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:orientation="vertical"
+                    >
+                    <WebView
+                        android:id="@+id/web_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:text="1. The test contains 3 sections and each section is allotted a specific time." />
+
+                    <!-- <TextView
+                         style="@style/textview_inter"
+                         android:textSize="@dimen/_11sdp"
+                         android:layout_marginTop="@dimen/_8sdp"
+                         android:text="2. Each question has 5 options out of which only one is correct." />
+
+                     <TextView
+                         style="@style/textview_inter"
+                         android:textSize="@dimen/_11sdp"
+                         android:layout_marginTop="@dimen/_8sdp"
+                         android:text="3. You have to finish the test in 60 minutes." />
+
+                     <TextView
+                         style="@style/textview_inter"
+                         android:textSize="@dimen/_11sdp"
+                         android:layout_marginTop="@dimen/_8sdp"
+                         android:text="4. Try not to guess the answer as there is a negative marking." />
+
+                     <TextView
+                         style="@style/textview_inter"
+                         android:textSize="@dimen/_11sdp"
+                         android:layout_marginTop="@dimen/_8sdp"
+                         android:text="5. You will be awarded 1 marks for each correct answer and 0.25 marks will be deducted for each wrong answer." />
+
+                     <TextView
+                         style="@style/textview_inter"
+                         android:textSize="@dimen/_11sdp"
+                         android:layout_marginTop="@dimen/_8sdp"
+                         android:text="6. There is no penalty for the questions that you have not attempted." />
+
+                     <TextView
+                         style="@style/textview_inter"
+                         android:textSize="@dimen/_11sdp"
+                         android:layout_marginTop="@dimen/_8sdp"
+                         android:text="7. You can change your answer by clicking on some other option." />
+
+                     <TextView
+                         style="@style/textview_inter"
+                         android:textSize="@dimen/_11sdp"
+                         android:layout_marginTop="@dimen/_8sdp"
+                         android:text="8. A number list of all questions appears at the middle of the screen, you can access the questions in any order within a section or across sections by clicking on the question number given on the number list." />
+
+                     <TextView
+                         style="@style/textview_inter"
+                         android:textSize="@dimen/_11sdp"
+                         android:layout_marginTop="@dimen/_8sdp"
+                         android:text="9. Do not click the button “submit test” before completing the test. A test once submitted cannot be resumed." />
+
+                     <TextView
+                         style="@style/textview_inter"
+                         android:textSize="@dimen/_11sdp"
+                         android:layout_marginTop="@dimen/_8sdp"
+                         android:text="10. I have read all the instructions carefully and have understood them." />
+     -->
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_8sdp"
+                    android:background="@drawable/winning_bg_header"
+                    android:gravity="center_vertical"
+                    >
+                    <TextView
+                        android:id="@+id/tvRankLabel"
+                        style="@style/textview_inter"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_14sdp"
+                        android:textColor="@color/quiztech_teal"
+                        android:text="Rank"
+                        />
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        />
+                    <TextView
+                        android:id="@+id/tvPrizeLabel"
+                        android:text="Prizes"
+                        style="@style/textview_inter"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_14sdp"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:textColor="@color/quiztech_teal"/>
+                </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvRankPrizes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+
+                    tools:listitem="@layout/item_rank_prize" />
+
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lnr_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/backButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:minHeight="@dimen/_35sdp"
+            android:background="@drawable/round_selected"
+            app:backgroundTint="@color/enroll_btn_color"
+            android:text="Back"
+            android:fontFamily="@font/inter_semibold"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/startButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_semibold"
+            android:minHeight="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_weight="1"
+            android:background="@drawable/round_selected"
+            android:text="Start"
+            app:backgroundTint="@color/colorPrimary"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</RelativeLayout>

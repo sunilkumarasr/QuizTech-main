@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="black_semi">#1A1A1A</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color> <!-- Used for status bar in dark theme -->
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#757575</color>
+    <color name="textColorhint">#89A9CB</color>
+    <color name="textColorhint_2">#D9D9D9</color>
+    <color name="textcolorTextview">#364257</color>
+
+    <!-- Specific colors from images (approximations) -->
+    <color name="quiztech_teal">#09747A</color> <!-- Teal for buttons and highlights -->
+    <color name="quiztech_orange">#FF9800</color> <!-- Orange for accents like "Register Now" -->
+    <color name="enroll_btn_color">#F39537</color> <!-- Orange for accents like "Register Now" -->
+    <color name="quiztech_light_green_background">#E0F2F1</color> <!-- Light green gradient start -->
+    <color name="quiztech_light_blue_background">#E1F5FE</color> <!-- Light blue gradient end -->
+
+    <!-- Very light gradient for login/register screens -->
+    <color name="gradient_start_very_light">#E6F2F0</color>
+    <color name="gradient_end_very_light">#F5FAFF</color>
+    <color name="gradient_center">#8AC2D0</color>
+
+    <color name="dividerColor">#E0E0E0</color>
+    <color name="grey_font">#D0D5DD</color>
+    <color name="text_color_unselect">#344054</color>
+    <color name="sub_heading_exam_color">#7A7E87</color>
+    <color name="attempts_text_color">#6E79CA</color>
+    <color name="attempts_bg_color">#33D1D6FC</color>
+    <color name="winning_header_bg">#85B1B4</color>
+    <color name="wallet_bg_add_border">#D1D6FC</color>
+    <color name="transaction_bg_color">#F5F4F8</color>
+    <color name="wallet_bg_add">#33D1D6FC</color>
+    <color name="payment_success_color">#03B961</color>
+    <color name="score_color_podium">#FF9215</color>
+    <color name="failed_color">#F84B4B</color>
+    <color name="inprogress_color">#F8884B</color>
+    <color name="success_color">#55AF60</color>
+    <color name="login_winner">#FAAD3E</color>
+
+</resources>

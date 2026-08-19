@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_8sdp"
+    app:cardCornerRadius="@dimen/_8sdp"
+    app:cardElevation="@dimen/_1sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvRank"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:textColor="@color/black"
+            android:text="1"
+            android:gravity="center"
+            android:background="@drawable/white_circle_border"
+            android:textSize="@dimen/_12sdp"
+            android:fontFamily="@font/inter_semibold"
+            />
+
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="@dimen/_48sdp"
+            android:layout_height="@dimen/_48sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:src="@drawable/ic_profile"
+            app:civ_border_color="@color/quiztech_teal"
+            app:civ_border_width="1dp"
+            />
+              <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    >
+                    <TextView
+                        android:id="@+id/tvName"
+                        style="@style/textview_inter_semi"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:textColor="@color/text_color_unselect"
+                        tools:text="Saurabh Purwal" />
+                  <TextView
+                      android:id="@+id/tv_score"
+                      style="@style/textview_inter"
+                      android:layout_marginStart="@dimen/_10sdp"
+                      android:textColor="@color/sub_heading_exam_color"
+                      tools:text="240" />
+                </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/img_star"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:src="@drawable/ic_star_first"
+            />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

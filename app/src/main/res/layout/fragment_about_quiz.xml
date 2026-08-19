@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".enroll.AboutQuizFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+
+        <TextView
+            android:id="@+id/tvAttempts"
+            style="@style/textview_inter"
+            android:text="450 Attempts"
+            android:textColor="@color/attempts_text_color"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            >
+            <TextView
+
+                style="@style/textview_inter"
+                android:text="Entry Fee: "
+
+                />
+            <TextView
+                android:id="@+id/tvEntryFee"
+                style="@style/textview_inter"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="₹ 50"
+                android:textStyle="bold"
+                android:textColor="@color/quiztech_teal"
+
+                />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tvSubjectsTitle"
+            style="@style/textview_inter"
+            android:text="Subjects"
+           android:textStyle="bold"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:textColor="@color/quiztech_teal"
+
+            />
+
+        <!-- Placeholder for subjects list. We will replace this with a RecyclerView later. -->
+        <LinearLayout
+            android:id="@+id/llSubjectsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubjectsTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Example Subject Item (Repeat for each subject) -->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_subjects"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_subject_layout"
+                >
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

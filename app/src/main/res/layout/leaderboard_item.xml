@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <FrameLayout
+        android:id="@+id/flUserImage"
+        android:layout_width="@dimen/_22sdp"
+        android:layout_height="@dimen/_22sdp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_avathar" />
+
+        <TextView
+            android:id="@+id/tvUserInitial"
+            style="@style/textview_inter_semi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10sdp"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/userName"
+        style="@style/textview_inter_semi"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/flUserImage"
+        android:text="User Name"
+        android:textColor="@color/textcolorTextview" />
+
+    <TextView
+        android:id="@+id/userScore"
+        style="@style/textview_inter_semi"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:text="100/100 Points"
+        android:textColor="@color/textcolorTextview" />
+
+</RelativeLayout>

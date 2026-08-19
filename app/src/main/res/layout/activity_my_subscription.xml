@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_bg_full"
+    android:orientation="vertical"
+    tools:context=".profile.MySubscriptionActivity">
+
+    <include
+        android:id="@+id/layoutHeader"
+        layout="@layout/header_toolbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSubscriptions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_8sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_my_subscription" />
+
+    <TextView
+        android:id="@+id/tvNoData"
+        style="@style/textview_inter_semi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="No active subscriptions found"
+        android:visibility="gone" />
+
+</LinearLayout>

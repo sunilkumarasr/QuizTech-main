@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_bg_full"
+    tools:context=".wallet.AddBankActivity">
+
+    <include
+        android:id="@+id/headerToolbar"
+        layout="@layout/header_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/btnSave"
+        app:layout_constraintTop_toBottomOf="@id/headerToolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                style="@style/textview_inter"
+                android:text="Account number"
+                android:textColor="@color/text_color_unselect"
+                android:textSize="@dimen/_12sdp" />
+
+            <EditText
+                android:id="@+id/etAccountNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_rounded_bg_stroke"
+                android:hint="Enter Account number"
+                android:fontFamily="@font/inter"
+                android:textSize="@dimen/_12sdp"
+                android:inputType="number"
+                android:padding="@dimen/_12sdp" />
+
+            <TextView
+                style="@style/textview_inter"
+                android:layout_marginTop="16dp"
+                android:text="Confirm Account Number"
+                android:textColor="@color/text_color_unselect"
+                android:textSize="@dimen/_12sdp" />
+
+            <EditText
+                android:id="@+id/etConfirmAccountNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_rounded_bg_stroke"
+                android:hint="Enter Confirm Account Number"
+                android:inputType="number"
+                android:fontFamily="@font/inter"
+                android:textSize="@dimen/_12sdp"
+                android:padding="@dimen/_12sdp" />
+
+            <TextView
+                style="@style/textview_inter"
+                android:layout_marginTop="16dp"
+                android:text="Bank Name"
+                android:textColor="@color/text_color_unselect"
+                android:textSize="@dimen/_12sdp" />
+
+            <EditText
+                android:id="@+id/etBankName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_rounded_bg_stroke"
+                android:hint="Enter Bank Name"
+                android:fontFamily="@font/inter"
+                android:textSize="@dimen/_12sdp"
+                android:inputType="text"
+                android:padding="@dimen/_12sdp" />
+
+            <TextView
+                style="@style/textview_inter"
+                android:layout_marginTop="16dp"
+                android:text="IFSC Code"
+                android:textColor="@color/text_color_unselect"
+                android:textSize="@dimen/_12sdp" />
+
+            <EditText
+                android:id="@+id/etIfscCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_rounded_bg_stroke"
+                android:hint="Enter IFSC Code"
+                android:fontFamily="@font/inter"
+                android:textSize="@dimen/_12sdp"
+                android:inputType="text"
+                android:padding="@dimen/_12sdp" />
+
+            <TextView
+                style="@style/textview_inter"
+                android:layout_marginTop="16dp"
+                android:text="Account type"
+                android:textColor="@color/text_color_unselect"
+                android:textSize="@dimen/_12sdp" />
+
+            <EditText
+                android:id="@+id/etAccountType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_rounded_bg_stroke"
+                android:hint="Enter Account type"
+                android:fontFamily="@font/inter"
+                android:textSize="@dimen/_12sdp"
+                android:inputType="text"
+                android:padding="@dimen/_12sdp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/button_rounded_enroll_bg"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:fontFamily="@font/inter"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

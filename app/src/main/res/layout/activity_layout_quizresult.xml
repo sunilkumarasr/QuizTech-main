@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".quiz.QuizResultActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+       <include layout="@layout/header_toolbar"
+           android:id="@+id/toolbarHeader"
+           />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvExamTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="SBI Clear Prelims 2024-25"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/quiztech_teal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivExamIcon"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:textSize="@dimen/_16sdp"
+                />
+
+            <TextView
+                android:id="@+id/tvExamDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/sub_heading_exam_color"
+                android:text="Lorem Ipsum is simply dummy printing and typesetting"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                app:layout_constraintTop_toBottomOf="@+id/tvExamTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivExamIcon" />
+
+            <ImageView
+                android:id="@+id/ivExamIcon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/img_quiz"
+                app:layout_constraintTop_toTopOf="@+id/tvExamTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvExamTitle"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/ivCalendarIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/img_calender"
+                app:layout_constraintTop_toBottomOf="@+id/tvExamDescription"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvDateTimeLabel"
+                style="@style/textview_inter"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:text="Date and Time:"
+                android:textSize="@dimen/_12sdp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintTop_toTopOf="@+id/ivCalendarIcon"
+                app:layout_constraintStart_toEndOf="@+id/ivCalendarIcon" />
+
+            <TextView
+                android:id="@+id/tvDateTimeValue"
+                style="@style/textview_inter"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:text="20-02-2025, 09:25 AM"
+                android:textSize="@dimen/_12sdp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/tvDateTimeLabel"
+                app:layout_constraintStart_toEndOf="@+id/ivCalendarIcon" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/txt_your_rank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:background="@drawable/round_unselected"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="Your Points: 850"
+            android:textColor="@color/black_semi"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:minWidth="@dimen/_200sdp"
+            android:layout_height="wrap_content"
+            app:tabGravity="start"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:background="@color/white"
+            app:tabIndicatorFullWidth="true"
+            app:tabTextColor="#7A7E87"
+            app:tabSelectedTextColor="@color/quiztech_teal"
+            android:layout_marginTop="@dimen/_16sdp"
+            app:tabIndicatorColor="@color/quiztech_teal">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Results" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Leader Board" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Winnings" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <LinearLayout
+            android:id="@+id/resultsLayout"
+            android:layout_width="match_parent"
+            android:layout_marginVertical="@dimen/_16sdp"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/textview_inter"
+                android:text="Basic Information"
+                android:textColor="@color/textcolorTextview"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:columnCount="2"
+                android:rowCount="2">
+
+                <TextView
+                    style="@style/textview_inter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/txt_correct_ans"
+                    style="@style/textview_inter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Correct Answers : 94"
+                    android:textColor="@color/payment_success_color" />
+
+                <TextView
+                    android:id="@+id/txt_total_qtns"
+                    style="@style/textview_inter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Total Questions: 100" />
+
+                <TextView
+                    android:id="@+id/txt_incorrect_ans"
+                    style="@style/textview_inter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Incorrect Answers: 6"
+                    android:textColor="@android:color/holo_red_dark" />
+
+            </GridLayout>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/leaderboardRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:listitem="@layout/leaderboard_item"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/winningsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:listitem="@layout/winning_item"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_bg_full"
+    android:orientation="vertical"
+    >
+
+   <include layout="@layout/header_toolbar"
+       android:id="@+id/layoutHeader"
+       />
+    <LinearLayout
+
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:visibility="gone"
+        android:layout_marginBottom="10dp">
+        <LinearLayout
+            android:id="@+id/lnr_active"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginEnd="5dp"
+            >
+            <CheckedTextView
+                android:id="@+id/txt_active"
+                android:layout_width="match_parent"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:layout_height="match_parent"
+                android:text="SBI"
+                android:textColor="@drawable/color_selector"
+                android:textSize="@dimen/_11sdp"
+                android:gravity="center"
+                android:checked="true"
+                android:singleLine="true"
+                android:background="@drawable/bg_selector"
+
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/lnr_completed"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginStart="5dp"
+            >
+            <CheckedTextView
+                android:id="@+id/txt_completed"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="@dimen/_8sdp"
+
+                android:text="Clearks"
+                android:textColor="@drawable/color_selector"
+                android:textSize="@dimen/_11sdp"
+                android:background="@drawable/bg_selector"
+                android:singleLine="true"
+                android:gravity="center"
+                android:textAlignment="center"
+
+                android:fontFamily="@font/poppins"/>
+        </LinearLayout>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewExams"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="8dp"
+        android:layout_margin="@dimen/_16sdp"
+        android:paddingTop="8dp"
+        tools:listitem="@layout/item_mock_test"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" /> <!-- Vertical scrolling -->
+
+    <TextView
+        android:id="@+id/tvNoData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="No Mock Tests Available"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/poppins"
+        android:visibility="gone" />
+
+</LinearLayout>

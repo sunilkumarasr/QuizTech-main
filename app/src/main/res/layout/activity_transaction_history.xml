@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/header_toolbar"
+            app:layout_constraintTop_toTopOf="parent" />
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/btnNewQuiz"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/_35sdp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:fontFamily="@font/poppins"
+            android:background="@drawable/drawable_transaction_selector"
+            android:text="Added"
+            android:checked="true"
+            android:button="@null"
+            android:textColor="@drawable/color_selector" />
+
+        <RadioButton
+            android:id="@+id/btnCompletedQuiz"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/_35sdp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="Withdrawal"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:fontFamily="@font/poppins"
+            android:button="@null"
+            android:background="@drawable/drawable_transaction_selector"
+            android:textColor="@drawable/color_selector"
+            />
+    </RadioGroup>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTransactions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            tools:listitem="@layout/item_transaction" />
+
+
+</LinearLayout>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/success_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_success"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:id="@+id/payment_successful_text"
+        style="@style/textview_inter_semi"
+        android:text="Payment Successful"
+        android:textSize="@dimen/_18sdp"
+        android:textColor="@color/payment_success_color"
+       />
+
+    <TextView
+        android:id="@+id/transaction_successful_text"
+        style="@style/textview_inter_semi"
+        android:text="Your transaction was successful"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@color/sub_heading_exam_color"
+        android:layout_marginBottom="32dp"/>
+
+    <TextView
+        android:id="@+id/amount_text"
+        style="@style/textview_inter"
+        android:text="₹ 200.00"
+        android:textSize="@dimen/_24sdp"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/_32sdp"/>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:id="@+id/transaction_details_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_16sdp"
+                android:background="@drawable/drawable_payment_transaction_bg"
+                android:layout_marginBottom="32dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="Payment"
+                        style="@style/textview_inter_sub_heading"
+                        android:textSize="@dimen/_12sdp"
+                        />
+
+                    <TextView
+                        android:id="@+id/payment_amount_detail"
+                        style="@style/textview_inter_semi"
+                        android:textSize="@dimen/_12sdp"
+                        android:text="₹ 200.00"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        style="@style/textview_inter_sub_heading"
+                        android:textSize="@dimen/_12sdp"
+                        android:layout_weight="1"
+                        android:text="Date"/>
+
+                    <TextView
+                        android:id="@+id/date_detail"
+                        android:text="30 Dec, 2024"
+                        style="@style/textview_inter_semi"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="Time"
+                        style="@style/textview_inter_sub_heading"
+                        android:textSize="@dimen/_12sdp"
+                        />
+
+                    <TextView
+                        android:id="@+id/time_detail"
+                        android:text="20:32"
+                        style="@style/textview_inter_semi"
+                        android:textSize="@dimen/_12sdp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="Reference Number"
+                        style="@style/textview_inter_sub_heading"
+                        android:textSize="@dimen/_12sdp"/>
+
+                    <TextView
+                        android:id="@+id/reference_number_detail"
+                        android:text="QOIU-0012-ADFE-234"
+
+                        style="@style/textview_inter_semi"
+                        android:textSize="@dimen/_12sdp"
+                        android:gravity="end"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="Fee"
+                        style="@style/textview_inter_sub_heading"
+                        android:textSize="@dimen/_12sdp"
+                        />
+
+                    <TextView
+                        android:id="@+id/fee_detail"
+                        android:text="₹ 0"
+
+                        style="@style/textview_inter_semi"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/done_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Done"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/inter_semibold"
+                app:backgroundTint="@color/enroll_btn_color"
+                app:cornerRadius="24dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/start_now_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start Now"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/quiztech_teal"
+                app:strokeColor="@color/quiztech_teal"
+                android:fontFamily="@font/inter_semibold"
+                app:strokeWidth="1dp"
+                app:cornerRadius="24dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

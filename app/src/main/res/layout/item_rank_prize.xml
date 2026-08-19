@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            android:id="@+id/tvRankValue"
+            style="@style/textview_inter"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:textStyle="bold"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/quiztech_teal"
+            android:text="1"
+            />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:id="@+id/tvPrizeValue"
+            android:text="₹ 10,000"
+            style="@style/textview_inter"
+            android:textStyle="bold"
+            android:textSize="@dimen/_14sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:textColor="@color/quiztech_teal"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_3sdp"
+        android:background="@drawable/dotted_line"
+        />
+
+
+
+</LinearLayout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+   <include layout="@layout/header_toolbar"
+       android:id="@+id/layoutHeader"
+       />
+
+    <LinearLayout
+        android:id="@+id/lnr_add_cash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_margin="@dimen/_16sdp"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:id="@+id/balance_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginVertical="@dimen/_16sdp"
+            android:gravity="center_vertical"
+            android:background="@drawable/drawable_payment_wallet"
+            android:padding="@dimen/_16sdp">
+
+            <ImageView
+                android:id="@+id/wallet_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_wallet"
+                />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp">
+
+                <TextView
+                    android:id="@+id/total_balance_text"
+                    style="@style/textview_inter"
+                    android:text="Total balance"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/total_balance_amount"
+                    style="@style/textview_inter_semi"
+                    android:text="₹ 65.00"
+                    android:textSize="@dimen/_18sdp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/enter_amount_text"
+            style="@style/textview_inter_semi"
+            android:text="Enter Amount"
+            android:textSize="@dimen/_14sdp"
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/_8sdp"
+            >
+
+            <EditText
+                android:id="@+id/amount_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/drawable_payment_edittext"
+                android:hint="200.00"
+                android:paddingHorizontal="@dimen/_16sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:inputType="numberDecimal"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/add_cash_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="ADD CASH"
+                android:backgroundTint="@color/quiztech_teal"
+                app:cornerRadius="@dimen/_12sdp"/>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/enroll_now_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Enroll Now ₹ 50"
+            android:fontFamily="@font/inter"
+            android:textStyle="bold"
+            android:backgroundTint="@color/enroll_btn_color"
+
+            app:cornerRadius="24dp"/>
+
+    </LinearLayout>
+    <include android:id="@+id/lnr_success"
+        layout="@layout/activity_payment_success"
+        android:visibility="gone"
+        />
+
+
+</LinearLayout>

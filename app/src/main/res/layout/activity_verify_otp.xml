@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_bg_full"
+    android:padding="@dimen/_16sdp"
+    android:orientation="vertical"
+    tools:context=".VerifyOtpActivity">
+    <TextView
+        android:id="@+id/tvVerifyTitle"
+        style="@style/loginTextviewTextStyleHeader"
+        android:text="Verification Code"
+        android:layout_marginTop="@dimen/_48sdp"
+        android:layout_marginStart="0dp"
+        android:textColor="@color/text_color_unselect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tvVerifySubtitle"
+        android:layout_width="wrap_content"
+        style="@style/loginTextviewInputText"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="0dp"
+        android:textColor="@color/text_color_unselect"
+
+        android:text="We have sent the verification code to your Email ID"
+
+ />
+
+    <TextView
+        android:id="@+id/tvUserEmail"
+        style="@style/loginTextviewInputText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Sample@gmail.com"
+        android:layout_marginStart="0dp"
+        android:drawablePadding="@dimen/_8sdp"
+        android:drawableRight="@drawable/ic_edit"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/text_color_unselect"
+
+        android:drawableTint="@color/quiztech_orange"/>
+
+    <ImageView
+        android:id="@+id/ivVerificationIllustration"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:src="@drawable/icon_otp_bg"
+        android:contentDescription="OTP Verification Illustration"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"/>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    >
+    <LinearLayout
+        android:id="@+id/llOtpBoxes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivVerificationIllustration">
+
+        <EditText
+            android:id="@+id/etOtp1"
+            style="@style/OtpEditTextStyle" />
+
+        <EditText
+            android:id="@+id/etOtp2"
+            style="@style/OtpEditTextStyle" />
+
+        <EditText
+            android:id="@+id/etOtp3"
+            style="@style/OtpEditTextStyle" />
+
+        <EditText
+            android:id="@+id/etOtp4"
+            style="@style/OtpEditTextStyle" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnVerifyContinue"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/button_rounded_bg"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llOtpBoxes" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVerifyContinue">
+
+        <TextView
+            android:id="@+id/tvNoOtp"
+            style="@style/loginTextviewInputText"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:textColor="@color/text_color_unselect"
+            android:text="Didn\'t get OTP Code? "
+            android:fontFamily="@font/roboto"
+            />
+
+        <TextView
+            android:id="@+id/tvResendCode"
+
+            style="@style/loginTextviewInputText"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:text="Resend Code"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/quiztech_orange" />
+    </LinearLayout>
+</LinearLayout>
+
+</LinearLayout>

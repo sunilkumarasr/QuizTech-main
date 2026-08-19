@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">QuizTech</string>
+    <string name="mock_test_details_format">Questions Count: %1$d\nMax Marks: %2$d\nTime: %3$d minutes</string>
+    <string name="other">Other</string>
+    <string name="shop">Shop</string>
+    <string name="home">Home</string>
+    <string name="enroll_now">Enroll Now</string>
+    <string name="banking"><![CDATA[Banking & Insurance]]></string>
+    <string name="all_category">All Categories</string>
+    <string name="back">Back</string>
+    <string name="winnings">Winnings</string>
+    <string name="about_quiz">About Quiz</string>
+    <string name="continue_">Continue</string>
+    <string name="completed_quiz">Completed Quiz</string>
+    <string name="quiz_tech_logo">Quiz Tech Logo</string>
+    <string name="login_image">Login Image</string>
+    <string name="daily_quiz_time">Daily Quiz Time</string>
+    <string name="test_your_knowledge">Test your knowledge</string>
+    <string name="test_your_knowledge_win">WIN REWARDS</string>
+    <string name="log_in_to_access_your_account">Log in to access your account</string>
+    <string name="email_id">Email ID</string>
+    <string name="enter_email_id">Enter Email ID</string>
+    <string name="string_continue">Continue</string>
+    <string name="don_t_have_an_account">"Don't have an account? "</string>
+    <string name="register_now">Register Now</string>
+    <string name="sub_categories">Sub Categories</string>
+    <string name="topic">Topics</string>
+    <string name="view_details">View Details</string>
+    <string name="marchant_code" />
+</resources>

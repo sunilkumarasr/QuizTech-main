@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/img_bg_full"
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:id="@+id/tvRegisterTitle"
+        style="@style/loginTextviewTextStyleHeader"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:text="Register Now"
+
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/text_color_unselect"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRegisterSubtitle"
+        style="@style/loginTextviewInputText"
+        android:textColor="@color/text_color_unselect"
+        android:text="Enter Email ID to send one time Password"
+android:fontFamily="@font/roboto"
+        />
+
+    <TextView
+        android:id="@+id/tvEmailLabel"
+
+        style="@style/loginTextviewInputText"
+        android:text="Email ID"
+        android:textColor="#364257"
+        android:layout_marginTop="@dimen/_16sdp"
+        />
+
+    <EditText
+        android:id="@+id/etRegisterEmail"
+        style="@style/loginEditTextStyle"
+        android:hint="Enter Email ID"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/textColorhint_2"
+        android:textColor="@color/text_color_unselect"
+        android:background="@drawable/edittext_rounded_bg_stroke"
+
+        />
+
+    <Button
+        android:id="@+id/btnRegisterContinue"
+        style="@style/loginBottonStyle"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:text="Continue"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:layout_weight="1"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="horizontal"
+
+        >
+
+        <TextView
+            android:id="@+id/tvHaveAccount"
+            style="@style/loginTextviewInputText"
+            android:text="If you have an account? "
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+
+            android:fontFamily="@font/inter_semibold"
+            />
+
+        <TextView
+            android:id="@+id/tvLoginNow"
+            style="@style/loginTextviewInputText"
+            android:text="Login"
+            android:layout_marginStart="0dp"
+            android:textColor="@color/quiztech_orange"
+            android:fontFamily="@font/inter_semibold"
+
+            />
+    </LinearLayout>
+
+</LinearLayout>

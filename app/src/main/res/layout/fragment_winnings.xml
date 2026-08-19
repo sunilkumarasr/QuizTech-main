@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/img_bg_full">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvWinnings"
+            style="@style/textview_inter_semi"
+            android:text="Winnings"
+            android:textColor="@color/text_color_unselect"
+            android:textSize="@dimen/_18sdp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            app:cardBackgroundColor="#E0F7FA"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/_16sdp">
+
+                <TextView
+                    android:id="@+id/txt_your_rank"
+                    style="@style/textview_inter_semi"
+                    android:background="@drawable/rounded_corner_blue"
+                    android:padding="@dimen/_5sdp"
+                    android:text="#4"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp"
+                    android:gravity="center"
+                    android:layout_margin="0dp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_width="@dimen/_35sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/textview_inter_semi"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:text="You are doing better than 20% of other players!"
+                    android:textColor="@color/text_color_unselect"
+                     />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <include layout="@layout/fragment_leaderboard"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="-22dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_22sdp"
+            android:background="@drawable/img_podium_bottom_list"
+            >
+
+
+
+        <TextView
+            android:id="@+id/tvYourRank"
+            style="@style/textview_inter_semi"
+            android:text="Your Rank"
+            android:textColor="@color/text_color_unselect"
+            android:textSize="@dimen/_18sdp"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvYourRank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_2sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:background="@drawable/circle_gray"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="@dimen/_42sdp"
+                    android:layout_height="@dimen/_42sdp"
+                    android:layout_marginStart="16dp"
+                    app:civ_border_width="1dp"
+                    android:src="@drawable/ic_launcher_background" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_weight="1"
+                    >
+                    <TextView
+                        android:id="@+id/tvName"
+                        style="@style/textview_inter_semi"
+                        android:textColor="@color/text_color_unselect"
+                        tools:text="Saurabh Purwal" />
+
+
+                    <TextView
+                        style="@style/textview_inter"
+                        android:text="81 Score"
+                        android:textColor="@color/sub_heading_exam_color" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvTopRanks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Top Ranks"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTopRanks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            tools:listitem="@layout/item_rank" />
+
+    </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
