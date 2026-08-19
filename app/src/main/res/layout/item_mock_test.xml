@@ -6,13 +6,15 @@
     android:layout_height="wrap_content"
 
     android:layout_marginEnd="@dimen/_12sdp"
-    app:cardBackgroundColor="@color/white" 
-    app:cardCornerRadius="16dp"
     android:layout_marginBottom="@dimen/_12sdp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="16dp"
     app:cardElevation="4dp">
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,104 +28,102 @@
                 android:textStyle="bold"
                 tools:text="SBI Clear Prelims 2024-25" />
 
-        <TextView
-            android:id="@+id/textExamType"
-            style="@style/textview_inter"
-            android:layout_marginTop="@dimen/_4sdp"
-            android:textSize="@dimen/_12sdp"
-            android:textColor="@color/sub_heading_exam_color"
-            android:visibility="gone"
-            tools:text="Entrance exam" />
-
-        <LinearLayout
-            android:id="@+id/layoutDateTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="@dimen/_4sdp"
-            android:visibility="visible"
-            tools:visibility="visible">
-
             <TextView
-                android:id="@+id/textDate"
+                android:id="@+id/textExamType"
                 style="@style/textview_inter"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_4sdp"
                 android:textColor="@color/sub_heading_exam_color"
-                tools:text="Date: 2024-12-25" />
+                android:textSize="@dimen/_12sdp"
+                android:visibility="gone"
+                tools:text="Entrance exam" />
 
-            <TextView
-                android:id="@+id/textTimeInfo"
-                style="@style/textview_inter"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:id="@+id/layoutDateTime"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/textDate"
+                    style="@style/textview_inter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/sub_heading_exam_color"
+                    android:textSize="@dimen/_10sdp"
+                    tools:text="Date: 2024-12-25" />
+
+                <TextView
+                    android:id="@+id/textTimeInfo"
+                    style="@style/textview_inter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/sub_heading_exam_color"
+                    android:textSize="@dimen/_10sdp"
+                    tools:text="Time: 10:00 AM" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textMaxMembers"
+                style="@style/textview_inter"
+                android:layout_marginTop="@dimen/_2sdp"
                 android:textColor="@color/sub_heading_exam_color"
-                tools:text="Time: 10:00 AM" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/textMaxMembers"
-            style="@style/textview_inter"
-            android:layout_marginTop="@dimen/_2sdp"
-            android:textSize="@dimen/_10sdp"
-            android:textColor="@color/sub_heading_exam_color"
-            android:visibility="visible"
-            tools:text="Max Members: 1000"
-            tools:visibility="visible" />
-
-        <TextView
-            android:id="@+id/textAttempts"
-            style="@style/textview_inter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/inter"
-            android:gravity="center_vertical"
-
-            android:textColor="@color/attempts_text_color"
-
-            android:visibility="visible"
-            tools:text="450 Attempts" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:visibility="gone"
-            android:orientation="vertical">
+                android:textSize="@dimen/_10sdp"
+                android:visibility="visible"
+                tools:text="Max Members: 1000"
+                tools:visibility="visible" />
 
             <TextView
-                android:id="@+id/textQuestionsCount"
+                android:id="@+id/textAttempts"
                 style="@style/textview_inter"
-                android:layout_marginTop="@dimen/_4sdp"
-                tools:text="Questions Count: 100" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/inter"
+                android:gravity="center_vertical"
 
-            <TextView
-                android:id="@+id/textMaxMarks"
-                style="@style/textview_inter"
-                android:layout_marginTop="@dimen/_4sdp"
-                tools:text="Max Marks: 100" />
+                android:textColor="@color/attempts_text_color"
 
-            <TextView
-                android:id="@+id/textTime"
-                style="@style/textview_inter"
-                android:layout_marginTop="@dimen/_4sdp"
-                tools:text="Time: 60 minutes" />
+                android:visibility="visible"
+                tools:text="450 Attempts" />
 
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textQuestionsCount"
+                    style="@style/textview_inter"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    tools:text="Questions Count: 100" />
+
+                <TextView
+                    android:id="@+id/textMaxMarks"
+                    style="@style/textview_inter"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    tools:text="Max Marks: 100" />
+
+                <TextView
+                    android:id="@+id/textTime"
+                    style="@style/textview_inter"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    tools:text="Time: 60 minutes" />
+
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/buttonEnrollNow"
                 style="@style/enrollBottonStyle"
-                android:text="@string/view_details"
                 android:layout_marginTop="@dimen/_16sdp"
                 android:backgroundTint="@color/quiztech_orange"
-
-                />
-
+                android:text="@string/view_details" />
 
 
         </LinearLayout>
@@ -132,17 +132,16 @@
             android:id="@+id/tvTag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
             android:background="@drawable/bg_tag_free"
             android:paddingHorizontal="@dimen/_12sdp"
             android:paddingVertical="@dimen/_4sdp"
             android:text="Free"
             android:textColor="@color/white"
             android:textSize="@dimen/_10sdp"
-            android:textStyle="bold"
-            android:layout_gravity="top|end" />
+            android:textStyle="bold" />
 
     </FrameLayout>
-
 
 
 </com.google.android.material.card.MaterialCardView>

@@ -48,8 +48,6 @@ data class  TestDetails (
 )
 
 data class RankData (
-
     @SerializedName("rank"  ) var rank  : String? = null,
     @SerializedName("prize" ) var prize : String? = null
-
 )

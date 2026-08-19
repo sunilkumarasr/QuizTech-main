@@ -39,6 +39,8 @@ class HomeFragment : Fragment() {
     private lateinit var categoryAdapter: CategoryAdapter
     private lateinit var mockTestAdapter: MockTestAdapter
     private lateinit var bannerAdapter: BannerAdapter
+
+
     var sampleCategories = ArrayList<Category>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,6 +56,22 @@ class HomeFragment : Fragment() {
         setupClickListeners()
         setupCategoryRecyclerView()
         setupMockTestRecyclerView()
+
+
+        binding.swipeRefresh.setOnRefreshListener {
+
+            loadHomeData()
+
+            binding.swipeRefresh.postDelayed({
+                binding.swipeRefresh.isRefreshing = false
+            }, 500)
+        }
+
+        loadHomeData()
+
+    }
+
+    private fun loadHomeData() {
         getBanners()
         getCategories()
         gtePopularMockTest()

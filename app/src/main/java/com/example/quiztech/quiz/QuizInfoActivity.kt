@@ -8,59 +8,73 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
-import androidx.activity.ComponentActivity
-import androidx.activity.enableEdgeToEdge
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.quiztech.BaseActivity
 import com.example.quiztech.R
-import com.example.quiztech.databinding.ActivityEnrollBinding
-import com.example.quiztech.databinding.ActivityEnrollBinding.inflate
 import com.example.quiztech.databinding.ActivityLayoutQuizinfoBinding
 import com.example.quiztech.databinding.ItemRankPrizeBinding
 import com.example.quiztech.exam.RankData
 import com.example.quiztech.exam.TestDetailsMain
 import com.example.quiztech.model.MainResponse
-import com.example.quiztech.model.MockListMainRes
 import com.example.quiztech.services.ServiceManager
 import com.prvt.sreezzyuser.common.Utils
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class QuizInfoActivity : BaseActivity<ActivityLayoutQuizinfoBinding>(ActivityLayoutQuizinfoBinding::inflate)  {
+class QuizInfoActivity :
+    BaseActivity<ActivityLayoutQuizinfoBinding>(ActivityLayoutQuizinfoBinding::inflate) {
 
 
     var test_id = ""
     var user_id = ""
-    var left_count=0
+    var left_count = 0
     private var countDownTimer: CountDownTimer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
         setContentView(binding.root)
         user_id = Utils.getData(this@QuizInfoActivity, "user_id", "").toString()
-
         test_id = intent.getStringExtra("test_id").toString()
 
+        setupViews()
+
+        loadQuizInfoData()
+        //getSubscriptionPlans()
+        //getExamQuestions()
+    }
+
+
+    private fun setupViews() {
+
+        // Header back
         binding.layoutHeader.imgBack.setOnClickListener {
             finish()
         }
 
+        // Bottom back
         binding.backButton.setOnClickListener {
             finish()
         }
 
+        // Swipe refresh
+        binding.swipeRefresh.setOnRefreshListener {
 
+            loadQuizInfoData()
 
+            binding.swipeRefresh.postDelayed({
+                if (!isFinishing && !isDestroyed) {
+                    binding.swipeRefresh.isRefreshing = false
+                }
+            }, 700)
+        }
+    }
+
+    private fun loadQuizInfoData() {
         getTestDetails()
-        //getSubscriptionPlans()
-        //getExamQuestions()
     }
 
     private lateinit var openDialog: ProgressDialog
@@ -70,7 +84,10 @@ class QuizInfoActivity : BaseActivity<ActivityLayoutQuizinfoBinding>(ActivityLay
             openDialog = Utils.openDialog(this@QuizInfoActivity)
             val dataManager = ServiceManager.Companion.getDataManager()
             val otpCallback = object : Callback<TestDetailsMain> {
-                override fun onResponse(call: Call<TestDetailsMain>, response: Response<TestDetailsMain>) {
+                override fun onResponse(
+                    call: Call<TestDetailsMain>,
+                    response: Response<TestDetailsMain>
+                ) {
                     Log.e("response", "response MockList ${response.body().toString()}")
                     if (openDialog.isShowing) {
                         openDialog.dismiss()
@@ -84,7 +101,7 @@ class QuizInfoActivity : BaseActivity<ActivityLayoutQuizinfoBinding>(ActivityLay
                             binding.txtTitle.text = "${data!!.title}"
                             binding.txtShort.text = "${data.shortDescriptions}"
                             binding.txtSub.text = "${data.subCategoryName}"
-                            
+
                             if (data.testType?.contains("Free", ignoreCase = true) == true) {
                                 binding.tvTag.text = "Free"
                                 binding.tvTag.setBackgroundResource(R.drawable.bg_tag_free)
@@ -104,41 +121,61 @@ class QuizInfoActivity : BaseActivity<ActivityLayoutQuizinfoBinding>(ActivityLay
                             binding.textMaxMembers.text = data.maxMembersList ?: "0"
                             binding.textLeftCount.text = data.left_count ?: "0"
                             binding.textRewards.text = data.rewards ?: "0"
-                            left_count=data.left_count?.toInt() ?: 0
+                            left_count = data.left_count?.toInt() ?: 0
                             binding.txtDateTime.text = "${data.pDate} : ${data.pTime} "
-                            binding.webDescription.loadData("${data.descriptions}", "text/html", "UTF-8")
+                            binding.webDescription.loadData(
+                                "${data.descriptions}",
+                                "text/html",
+                                "UTF-8"
+                            )
 
-                            val rankAdapter = RankAdapter(body.rankData)
-                            binding.rvRankPrizes.layoutManager = LinearLayoutManager(this@QuizInfoActivity)
-                            binding.rvRankPrizes.adapter = rankAdapter
+
+                            binding.lnrRankPrizes.removeAllViews()
+
+                            body.rankData.forEach { rankData ->
+
+                                val itemBinding = ItemRankPrizeBinding.inflate(
+                                    layoutInflater,
+                                    binding.lnrRankPrizes,
+                                    false
+                                )
+
+                                itemBinding.tvRankValue.text = rankData.rank
+                                itemBinding.tvPrizeValue.text = rankData.prize
+
+                                binding.lnrRankPrizes.addView(itemBinding.root)
+                            }
 
 
-                            if(data.isEnrolled==0)
-                            {
-                                binding.startButton.text="Enroll Now"
+                            if (data.isEnrolled == 0) {
+                                binding.startButton.text = "Enroll Now"
                                 binding.startButton.setOnClickListener {
-                                    if(left_count==0)
-                                    {
-                                        Utils.showToast(applicationContext,"Enrollment limit has been reached")
+                                    if (left_count == 0) {
+                                        Utils.showToast(
+                                            applicationContext,
+                                            "Enrollment limit has been reached"
+                                        )
                                         return@setOnClickListener
                                     }
                                     enrollNow()
                                 }
-                            }else {
-                                if(data.timeDifferenceMinutes ?: 0 < 1) {
+                            } else {
+                                if (data.timeDifferenceMinutes ?: 0 < 1) {
                                     binding.startButton.text = "Start Now"
                                     binding.startButton.isEnabled = true
                                     binding.startButton.setOnClickListener {
-                                        val intent=Intent(applicationContext, QuizActivity::class.java).apply {
-                                            putExtra("test_id",test_id)
-                                            putExtra("user_id",user_id)
+                                        val intent = Intent(
+                                            applicationContext,
+                                            QuizActivity::class.java
+                                        ).apply {
+                                            putExtra("test_id", test_id)
+                                            putExtra("user_id", user_id)
 
                                         }
                                         startActivity(intent)
                                         finish()
                                     }
-                                }
-                                else {
+                                } else {
                                     startCountdown(data.timeDifferenceMinutes ?: 0)
                                 }
                             }
@@ -172,27 +209,36 @@ class QuizInfoActivity : BaseActivity<ActivityLayoutQuizinfoBinding>(ActivityLay
     private fun startCountdown(secondss: Int) {
         countDownTimer?.cancel()
 
-        binding.cardTimer.visibility=View.VISIBLE
+        binding.cardTimer.visibility = View.VISIBLE
 
-        val millisInFuture = secondss *  1000L
+        val millisInFuture = secondss * 1000L
 
         countDownTimer = object : CountDownTimer(millisInFuture, 1000) {
             override fun onTick(millisUntilFinished: Long) {
-                val days = (millisUntilFinished / (1000 * 60 * 60*24))
-                val hours = (millisUntilFinished / (1000 * 60 * 60))% 24
+                val days = (millisUntilFinished / (1000 * 60 * 60 * 24))
+                val hours = (millisUntilFinished / (1000 * 60 * 60)) % 24
                 val mins = (millisUntilFinished / (1000 * 60)) % 60
                 val secs = (millisUntilFinished / 1000) % 60
 
-                var timeString=""
-                if(days>0)
-                 timeString = String.format("%02d:%02d:%02d:%02d", days,hours, mins, secs)
+                var timeString = ""
+                if (days > 0)
+                    timeString = String.format("%02d:%02d:%02d:%02d", days, hours, mins, secs)
                 else
-                 timeString = String.format("%02d:%02d:%02d", hours, mins, secs)
+                    timeString = String.format("%02d:%02d:%02d", hours, mins, secs)
 
                 binding.txtStartTimer.text = timeString
-                
+
                 // Pulsing animation
-                val scaleAnim = ScaleAnimation(1.0f, 1.1f, 1.0f, 1.1f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
+                val scaleAnim = ScaleAnimation(
+                    1.0f,
+                    1.1f,
+                    1.0f,
+                    1.1f,
+                    Animation.RELATIVE_TO_SELF,
+                    0.5f,
+                    Animation.RELATIVE_TO_SELF,
+                    0.5f
+                )
                 scaleAnim.duration = 500
                 scaleAnim.repeatMode = Animation.REVERSE
                 scaleAnim.repeatCount = 0
@@ -221,7 +267,10 @@ class QuizInfoActivity : BaseActivity<ActivityLayoutQuizinfoBinding>(ActivityLay
             openDialog = Utils.openDialog(this@QuizInfoActivity)
             val dataManager = ServiceManager.Companion.getDataManager()
             val otpCallback = object : Callback<MainResponse> {
-                override fun onResponse(call: Call<MainResponse>, response: Response<MainResponse>) {
+                override fun onResponse(
+                    call: Call<MainResponse>,
+                    response: Response<MainResponse>
+                ) {
                     Log.e("response", "response MockList ${response.body().toString()}")
                     if (openDialog.isShowing) {
                         openDialog.dismiss()
@@ -231,7 +280,10 @@ class QuizInfoActivity : BaseActivity<ActivityLayoutQuizinfoBinding>(ActivityLay
                         if (body?.status == 1) {
                             getTestDetails()
                         } else {
-                            Utils.showToast(this@QuizInfoActivity, body?.message ?: "Failed to enroll")
+                            Utils.showToast(
+                                this@QuizInfoActivity,
+                                body?.message ?: "Failed to enroll"
+                            )
                         }
                     } else {
                         Log.e("QuizInfo", "Failed to get test details: ${response.message()}")
@@ -247,7 +299,7 @@ class QuizInfoActivity : BaseActivity<ActivityLayoutQuizinfoBinding>(ActivityLay
                 }
             }
 
-            dataManager.enrollProduct(otpCallback,  user_id = user_id,test_id)
+            dataManager.enrollProduct(otpCallback, user_id = user_id, test_id)
 
         } catch (e: Exception) {
             if (openDialog.isShowing) {
@@ -262,28 +314,5 @@ class QuizInfoActivity : BaseActivity<ActivityLayoutQuizinfoBinding>(ActivityLay
         countDownTimer?.cancel()
     }
 
-
 }
 
-class RankAdapter(private val rankList: List<RankData>) :
-    RecyclerView.Adapter<RankAdapter.RankViewHolder>() {
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RankViewHolder {
-        val binding = ItemRankPrizeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return RankViewHolder(binding)
-    }
-
-    override fun onBindViewHolder(holder: RankViewHolder, position: Int) {
-        holder.bind(rankList[position])
-    }
-
-    override fun getItemCount(): Int = rankList.size
-
-    inner class RankViewHolder(private val binding: ItemRankPrizeBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-        fun bind(rankData: RankData) {
-            binding.tvRankValue.text = rankData.rank
-            binding.tvPrizeValue.text = rankData.prize
-        }
-    }
-}
